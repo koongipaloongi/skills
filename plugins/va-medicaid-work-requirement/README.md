@@ -1,6 +1,8 @@
-# Virginia Medicaid Work Requirement Helper
+# VA Medicaid Work Rule Guide (unofficial)
 
-A free, open-source Claude Code plugin. It helps people in Virginia understand the new **federal Medicaid work requirement** for **Medicaid Expansion adults**, which starts in 2027.
+> **Unofficial.** This project is not affiliated with, endorsed by, or maintained by the Virginia Department of Medical Assistance Services (DMAS), Cover Virginia, Cardinal Care, or the Commonwealth of Virginia. It summarizes their public information and links to the original sources.
+
+A free, open-source, **unofficial** Claude plugin. It helps people in Virginia understand the new **federal Medicaid work requirement** for **Medicaid Expansion adults**, which starts in 2027.
 
 > **Rules last verified: 2026-09-26.** Sources are listed [below](#sources).
 >
@@ -117,6 +119,10 @@ The FAQ says federal guidance may change. To update:
 ## Contributing
 
 Corrections are welcome. Please include an official source link for any rule change.
+
+## Maintainer
+
+[@koongipaloongi](https://github.com/koongipaloongi). Report errors or rule changes by [opening an issue](https://github.com/koongipaloongi/skills/issues).
 
 ## License
 

@@ -8,7 +8,7 @@
     {
       "name": "va-medicaid-work-requirement",
       "source": "./plugins/va-medicaid-work-requirement",
-      "description": "Screener, notice decoder, and hours tracker for Virginia's federal Medicaid work requirement"
+      "description": "Unofficial screener, notice decoder, and hours tracker for Virginia's federal Medicaid work requirement"
     }
   ]
 }

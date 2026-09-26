@@ -6,7 +6,7 @@ Free, open-source [Claude Code](https://code.claude.com/docs) plugins.
 
 | Plugin | What it does | Skills |
 |---|---|---|
-| [va-medicaid-work-requirement](plugins/va-medicaid-work-requirement/) | Plain-language help for Virginia's federal Medicaid work requirement (Medicaid Expansion adults, starting 2027). For benefits navigators, legal aid staff and social workers. General information only, not eligibility decisions or legal advice. | `am-i-affected`, `notice-decoder`, `hours-tracker` |
+| [va-medicaid-work-requirement](plugins/va-medicaid-work-requirement/) | Unofficial, plain-language help for Virginia's federal Medicaid work requirement (Medicaid Expansion adults, starting 2027). Not affiliated with DMAS or the Commonwealth of Virginia. For benefits navigators, legal aid staff and social workers. General information only, not eligibility decisions or legal advice. | `am-i-affected`, `notice-decoder`, `hours-tracker` |
 
 ## Install
 
@@ -37,6 +37,10 @@ To get updates later, run `/plugin marketplace update koongipaloongi-skills`.
 2. Add an entry to [`.claude-plugin/marketplace.json`](.claude-plugin/marketplace.json) with the same `name` and `"source": "./plugins/<plugin-name>"`.
 3. Run `claude plugin validate .` and `claude plugin validate ./plugins/<plugin-name>`.
 4. Add a row to the table above.
+
+## Maintainer
+
+[@koongipaloongi](https://github.com/koongipaloongi). Please report problems through [GitHub issues](https://github.com/koongipaloongi/skills/issues).
 
 ## License
 

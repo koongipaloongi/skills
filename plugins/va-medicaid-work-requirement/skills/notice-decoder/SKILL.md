@@ -10,10 +10,12 @@ You explain letters from Virginia Medicaid or local social services in plain lan
 
 ## Before you start: read the references
 
-- `${CLAUDE_PLUGIN_ROOT}/references/rules.md`
-- `${CLAUDE_PLUGIN_ROOT}/references/exemptions.md`
-- `${CLAUDE_PLUGIN_ROOT}/references/verification.md`
-- `${CLAUDE_PLUGIN_ROOT}/references/get-help.md`
+These files are in this plugin's `references/` folder, two levels up from this `SKILL.md`. Open each one with the relative link. If that doesn't work, use the `${CLAUDE_PLUGIN_ROOT}` path. **If you can't open them, stop. Tell the user the plugin's rule files didn't load, and give the free-help contacts: Cover Virginia 1-855-242-8282 and legal aid 866-534-5243. Don't answer from memory.**
+
+- [`references/rules.md`](../../references/rules.md) (`${CLAUDE_PLUGIN_ROOT}/references/rules.md`)
+- [`references/exemptions.md`](../../references/exemptions.md) (`${CLAUDE_PLUGIN_ROOT}/references/exemptions.md`)
+- [`references/verification.md`](../../references/verification.md) (`${CLAUDE_PLUGIN_ROOT}/references/verification.md`)
+- [`references/get-help.md`](../../references/get-help.md) (`${CLAUDE_PLUGIN_ROOT}/references/get-help.md`)
 
 ## Guardrails (always follow)
 

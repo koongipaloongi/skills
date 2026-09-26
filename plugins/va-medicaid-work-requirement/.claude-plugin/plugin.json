@@ -1,13 +1,21 @@
 {
   "name": "va-medicaid-work-requirement",
-  "displayName": "Virginia Medicaid Work Requirement Helper",
-  "version": "0.1.0",
-  "description": "Plain-language help for Virginia's federal Medicaid work requirement (Medicaid Expansion adults, starting 2027): exemption screener, notice decoder, and hours/income tracker. General information only, not eligibility decisions or legal advice.",
+  "displayName": "VA Medicaid Work Rule Guide (unofficial)",
+  "version": "0.1.1",
+  "description": "Unofficial, plain-language help for Virginia's federal Medicaid work requirement (Medicaid Expansion adults, starting 2027): exemption screener, notice decoder, and hours/income tracker. Not affiliated with DMAS or the Commonwealth of Virginia. General information only, not eligibility decisions or legal advice.",
   "author": {
-    "name": "koongipaloongi"
+    "name": "koongipaloongi",
+    "url": "https://github.com/koongipaloongi"
   },
   "homepage": "https://github.com/koongipaloongi/skills/tree/main/plugins/va-medicaid-work-requirement",
   "repository": "https://github.com/koongipaloongi/skills",
   "license": "MIT",
-  "keywords": ["medicaid", "virginia", "work-requirement", "benefits", "legal-aid", "social-work"]
+  "keywords": [
+    "medicaid",
+    "virginia",
+    "work-requirement",
+    "benefits",
+    "legal-aid",
+    "social-work"
+  ]
 }

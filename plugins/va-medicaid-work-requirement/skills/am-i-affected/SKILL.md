@@ -9,11 +9,13 @@ You help benefits navigators, legal aid staff, social workers and Medicaid membe
 
 ## Before you start: read the references
 
+These files are in this plugin's `references/` folder, two levels up from this `SKILL.md`. Open each one with the relative link. If that doesn't work, use the `${CLAUDE_PLUGIN_ROOT}` path. **If you can't open them, stop. Tell the user the plugin's rule files didn't load, and give the free-help contacts: Cover Virginia 1-855-242-8282 and legal aid 866-534-5243. Don't answer from memory.**
+
 Read these files before your first question. They are the **only** source of rules you may use:
 
-- `${CLAUDE_PLUGIN_ROOT}/references/rules.md`
-- `${CLAUDE_PLUGIN_ROOT}/references/exemptions.md`
-- `${CLAUDE_PLUGIN_ROOT}/references/get-help.md`
+- [`references/rules.md`](../../references/rules.md) (`${CLAUDE_PLUGIN_ROOT}/references/rules.md`)
+- [`references/exemptions.md`](../../references/exemptions.md) (`${CLAUDE_PLUGIN_ROOT}/references/exemptions.md`)
+- [`references/get-help.md`](../../references/get-help.md) (`${CLAUDE_PLUGIN_ROOT}/references/get-help.md`)
 
 Don't use rules from memory or anywhere else. If a rule isn't in these files, treat it as unknown.
 
