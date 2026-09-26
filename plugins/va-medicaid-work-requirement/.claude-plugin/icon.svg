@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-label="Document with a checkmark">
+  <rect width="256" height="256" rx="56" fill="#1F5F8B"/>
+  <path d="M78 44h72l38 38v122a8 8 0 0 1-8 8H78a8 8 0 0 1-8-8V52a8 8 0 0 1 8-8z" fill="#FFFFFF"/>
+  <path d="M150 44v30a8 8 0 0 0 8 8h30z" fill="#CFE3F1"/>
+  <rect x="92" y="98" width="72" height="10" rx="5" fill="#9DBFD8"/>
+  <rect x="92" y="120" width="52" height="10" rx="5" fill="#9DBFD8"/>
+  <circle cx="160" cy="174" r="34" fill="#2E9E6B"/>
+  <path d="M144 175l11 11 22-24" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
