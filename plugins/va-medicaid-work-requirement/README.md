@@ -4,7 +4,7 @@
 
 A free, open-source, **unofficial** Claude plugin. It helps people in Virginia understand the new **federal Medicaid work requirement** for **Medicaid Expansion adults**, which starts in 2027.
 
-> **Rules last verified: 2026-09-26.** Sources are listed [below](#sources).
+> **Rules last verified: 2026-09-26, against the DMAS FAQ updated September 15, 2026.** Sources are listed [below](#sources).
 >
 > ⚠️ **This plugin gives general information. It is not an eligibility decision or legal advice.** Only Virginia Medicaid decides eligibility. For denials, appeals or lost coverage, get free help (see [Free help](#free-help)).
 
@@ -26,18 +26,18 @@ Claude can also start these skills on its own when a question matches, for examp
 ### The rules in brief (as of 2026-09-26)
 
 - **Who it applies to:** Medicaid Expansion adults aged 19–64 who aren't excluded or excepted.
-- **When it starts:** for new applicants, January 1, 2027. For current members, their first renewal in 2027.
-- **How to meet it, in a month:** 80 hours of work, a work program, school and/or volunteering; **or** half-time school enrollment; **or** $580 in income (seasonal workers use a 6-month average).
-- **Which months count:** current members need **1 month** since their last renewal. Renewals happen every 6 months. New applicants need **the month before they apply**.
-- **Exemptions:** the full list, with timing rules, is in [`references/exemptions.md`](references/exemptions.md).
+- **When it starts:** for applications on or after January 1, 2027. For current members, a scheduled renewal date of March 31, 2027 or later.
+- **How to meet it, in a month:** 80 hours of work, a work program, school and/or volunteering; **or** half-time school enrollment (usually about 6 credit hours, as the school defines it); **or** $580 in income (seasonal workers use a 6-month average).
+- **Which months count:** current members need **1 month** since their last renewal. Renewals happen every 6 months. New applicants need **the month before they apply**. At a member's first renewal under the new rule, the lookback can cover their previous 12-month coverage period.
+- **Exemptions:** includes pregnancy, caring for a child 13 or younger, getting SSI or SSDI, and more. The full list, with timing rules, is in [`references/exemptions.md`](references/exemptions.md).
 
 ### Design choices
 
 - **All rules live in [`references/`](references/).** The skills read them and don't copy them, so updating is a one-place job.
 - **When the official sources are silent, the plugin says so.** For example, the sources don't say whether income and hours can be added together, so the tracker never combines them and sends the person to Cover Virginia instead.
-- **Two exclusions (meeting TANF or SNAP work rules, and being in a substance use disorder treatment program) appear only in the July 2026 DMAS FAQ.** The plugin includes them and says where they come from.
+- **Two exclusions (meeting TANF or SNAP work rules, and being in a substance use disorder treatment program) appear only in the DMAS FAQ, not on the DMAS web page.** The plugin includes them and says where they come from.
 - **Appeal deadlines** come from a 2021 DMAS appeals FAQ. The plugin always says **the deadline on the notice is the one that counts**.
-- **Proof checklist:** the official sources don't list the documents people need. The tracker's checklist is labeled *"Suggested records to keep. This is not an official list."*
+- **Proof checklist:** in 2027, what people report on their application or renewal is usually enough ("self-attestation"), and more requirements start in 2028. The official sources don't list the documents people need. The tracker's checklist is labeled *"Suggested records to keep. This is not an official list."*
 - **Privacy:** the skills never ask for names, Social Security numbers, Medicaid ID numbers or addresses. They don't write anything to disk unless asked.
 
 ## Install
@@ -102,7 +102,7 @@ claude --plugin-dir ./plugins/va-medicaid-work-requirement   # run from the repo
 All sources were checked on **2026-09-26**. The full table is in [`references/sources.md`](references/sources.md).
 
 - [DMAS: Federal Work Requirements](https://www.dmas.virginia.gov/news-updates/new-federal-requirements/federal-work-requirements/)
-- [DMAS: Federal Medicaid Work Requirement FAQs (July 2026)](https://www.dmas.virginia.gov/media/1zudegm1/hr1-federal-work-requirement-faqs-07-24-2026.pdf)
+- [DMAS: Federal Medicaid Work Requirement FAQs (updated September 15, 2026)](https://www.dmas.virginia.gov/media/cyvdt2wd/hr1-work-requirement-faqs-09-15-26.pdf)
 - [DMAS provider bulletin (Sept. 4, 2026)](https://vamedicaid.dmas.virginia.gov/bulletin/hr-1-federal-work-requirement-six-month-renewals-and-medicaid-eligibility-changes-non)
 - [Cover Virginia: Adults 19–64](https://coverva.dmas.virginia.gov/learn/coverage-for-adults/adults-19-64-years-old/)
 - [DMAS: Applicant / Member Appeals](https://www.dmas.virginia.gov/appeals/applicant-member-appeals-resources/) and [Client Appeals FAQ (2021)](https://www.dmas.virginia.gov/media/3221/client-appeals-frequently-asked-questions-2021-05-21.pdf)

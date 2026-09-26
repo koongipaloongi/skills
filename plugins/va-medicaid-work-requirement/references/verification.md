@@ -1,21 +1,29 @@
 As of 2026-09-26
 
-# Verification and proof
+# Showing that you qualify, and proof
 
-Source codes are defined in [rules.md](rules.md).
+Source codes are defined in [rules.md](rules.md). [FAQ] is the **September 2026** FAQ.
 
 ## What the official sources say
 
-- **The state checks its own records first.** "Virginia Medicaid will first use information from the member's application, case record and other information available to the state to see if a Medicaid Expansion member meets an exclusion or exception." [FAQ]
-- **Requests for documents start later.** "Starting in 2028, the state may request additional documentation to confirm that the member or applicant meets certain exclusions or exceptions." [FAQ]
-- **Two exceptions have to be requested** by the person: inpatient or institutional care (E7) and travel for medical care (E8). [FAQ]
-- **Volunteer hours** must be done through "a public or nonprofit organization that supervises and is able to track the time." [FAQ]
-- **Half-time school** is defined by the school. [FAQ]
-- **Keep contact information up to date** so letters arrive. Changes can be reported at commonhelp.virginia.gov or by calling Cover Virginia. [FAQ]
+- **Fill out the form fully.** "Fill out your application or, if requested, renewal form from Virginia Medicaid in full, including all activities you perform. If we need more information, we will reach out." [FAQ Q5]
+- **The state checks its own records first.** "Whenever possible, Virginia Medicaid will use information already available to the state to process an application or renewal, including determining whether someone has met the work requirement or is exempt." [FAQ Q5]
+- **In 2027, what you report is usually enough.** "In 2027, in most cases, the information you put on your application or renewal will be all you need to show you qualify for an exemption or have met the work requirement. (This is also sometimes called 'self-attestation'). Additional requirements will apply in 2028." [FAQ Q5]
+- **No doctor's note for medical exemptions in 2027.** "For 2027, you are not required to provide any documentation of your medical condition or disability." [FAQ Q8]
+- **Notice of Non-Compliance.** "You may receive a Notice of Non-Compliance, letting you know that we need you to provide information to determine your compliance or exemption status to remain enrolled in Expansion coverage. This notice will include instructions on what we need and how to submit it; **individuals must submit the requested information within 30 days.**" [FAQ Q20]
+- **How to send requested information** [FAQ Q20]:
+  - Mail or fax: Cardinal Care Correspondence Center, **PO Box 1198, Richmond, VA 23218**, or submit it to your local agency ("your local agency information will be listed on the checklist")
+  - Online: **commonhelp.virginia.gov**, where you can log in and upload documents
+  - Phone: Cover Virginia, **855-242-8282** (TTY 888-221-1590): "some information can be given over the phone as self-attestation"
+  - A new online portal for reporting work requirements "in the coming months"
+- **E7 and E8** (inpatient care, travel for care): "more information on how to request this exception will be provided at a later date." [FAQ Q6]
+- **Volunteer hours** must be done through "a public or nonprofit organization that supervises and is able to track the time." [FAQ Q16]
+- **Half-time school** is usually defined by the school. [FAQ Q14]
+- **Keep contact information up to date** so letters arrive. [FAQ Q23]
 
 ## What the sources do NOT say
 
-The sources **do not list which documents** a person has to provide to prove hours or income. The list below is **only a suggestion**: records that are sensible to keep in case questions come up. It is **not an official requirement**, and the skills must label it that way.
+The sources **don't list which documents** prove hours or income, and they say more requirements start in **2028**. The list below is **only a suggestion**: records that are sensible to keep in case Virginia Medicaid asks, especially for 2028. It is **not an official list**, and the skills must label it that way.
 
 ## Suggested records to keep (not an official list)
 
@@ -31,4 +39,4 @@ The sources **do not list which documents** a person has to provide to prove hou
 | Seasonal work | Pay records for the prior 6 months |
 | Unemployment benefits or other non-job income | Benefit letters or payment statements |
 
-Always add: **"If Virginia Medicaid asks you for proof, the letter will say what they need. Follow the letter. You can ask Cover Virginia or your local department of social services what to send."**
+Always add: **"In 2027, what you report on your application or renewal is usually enough. If Virginia Medicaid needs more, they'll send a notice saying exactly what to send. You'll have 30 days to send it. Follow the notice. You can ask Cover Virginia or your local department of social services what to send."**

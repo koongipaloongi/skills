@@ -12,6 +12,19 @@ Use **only** the contact details below. Never make up or guess a phone number, a
 - Best for: checking whether you're in Medicaid Expansion, asking about exemptions, what to send, and updating contact information
 - Sources: [FAQ]; [COVERVA]; [BULLETIN]
 
+## Sending information Virginia Medicaid asked for
+If you get a **Notice of Non-Compliance** or a checklist, you must send the requested information **within 30 days**. [FAQ Q20] Ways to send it:
+- **Mail:** Cardinal Care Correspondence Center, **PO Box 1198, Richmond, VA 23218**
+- **In person, by fax or by mail to your local agency.** Its details are listed on the checklist.
+- **Online:** **https://commonhelp.virginia.gov** (log in and upload documents)
+- **Phone:** Cover Virginia, **1-855-242-8282** (TTY **1-888-221-1590**). "Some information can be given over the phone."
+- Source: [FAQ]
+
+## DMAS town halls
+- Virtual town halls about the work requirement, with recordings of past sessions: **https://www.dmas.virginia.gov/news-updates/new-federal-requirements/town-halls/**
+- Questions about the town halls: **hr1@dmas.virginia.gov**
+- Sources: [FAQ Q24]; [BULLETIN]
+
 ## Your local department of social services
 - Find your office: **https://www.dss.virginia.gov/localagency/**
 - Best for: questions about your case, renewals and documents
@@ -31,7 +44,7 @@ Use **only** the contact details below. Never make up or guess a phone number, a
   - "In most cases, the time limit is 30 days from the date you receive the written notice of action." The notice is "presumed" to arrive "five days after the agency mails the notice."
   - **Keeping coverage during an appeal:** you "may request to have your coverage continued during the appeal process if you file your appeal request before the date coverage is terminated or within 10 days of the date stated on the notice of action." "Not all cases qualify." If you lose the appeal, "you may have to pay back the costs of medical care received during the period of continued coverage."
 - **How to file an appeal with DMAS** [DMAS appeals page; Cover Virginia appeals page]:
-  - Online: https://www.dmas.virginia.gov/appeals/ (the AIMS portal)
+  - Online: the AIMS appeals portal, https://dmas.virginia.gov/appeals/appeals-portal/ (more information at https://www.dmas.virginia.gov/appeals/)
   - Email: appeals@dmas.virginia.gov
   - Phone: 804-371-8488 (TTY: 1-800-828-1120)
   - Fax: 804-452-5454

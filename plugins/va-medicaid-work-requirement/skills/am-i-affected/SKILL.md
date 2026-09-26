@@ -36,9 +36,9 @@ First, ask whether you're talking with a helper (navigator, social worker or adv
 
 ### Step 1: New applicant or current member?
 Ask: "Are you (or is your client) applying for Medicaid now, or already enrolled and coming up for renewal?"
-This sets which month counts (see `rules.md` §5 and `exemptions.md` sections B and C):
-- **Applicant:** exclusions count if they apply in the **month of application**. Exceptions and activities count if they apply in the **month before** the application month.
-- **Member:** exclusions count if they apply in the **month the renewal is processed**. Exceptions and activities count if they apply in **any one month since the last renewal**.
+This sets which month counts (see `rules.md` §2 and §5, and `exemptions.md` sections B and C):
+- **Applicant:** the requirement applies to applications on or after **January 1, 2027**. Exceptions and activities count if they happened in the **month before** the application month. An exclusion counts if it applies now, or (as exception E3) if it applied in the month before.
+- **Member:** the requirement applies from a **scheduled renewal date of March 31, 2027 or later**. If the member's next renewal is earlier than that, say the requirement doesn't apply yet at that renewal, cite FAQ Q4, and suggest confirming with Cover Virginia. Exceptions and activities count if they happened in **any one month since the last renewal**. At the first renewal under the new rule, that can reach back over the previous 12-month coverage period (FAQ Q11, the "Sarah" example). An exclusion counts if it applies now, or (as E3) at any time since the last renewal.
 
 ### Step 2: Is the person in Medicaid Expansion at all? (`exemptions.md` A)
 Ask these one at a time:
@@ -47,28 +47,29 @@ Ask these one at a time:
 2. "Do you know what type of Medicaid coverage it is? For example Medicaid Expansion (adult coverage), pregnancy coverage, coverage based on a disability or SSI, or not sure?" If it's clearly another type → not affected. If not sure → note it and continue. Say that Cover Virginia can confirm the coverage type.
 3. "Is the person eligible for or enrolled in Medicare?" If yes → not in Expansion, so not affected.
 
-### Step 3: Exclusions (`exemptions.md` B, X1–X9)
+### Step 3: Exclusions (`exemptions.md` B, X1–X10)
 Ask about each exclusion **one at a time**, in plain words. Stop at the first "yes."
 - X1: pregnant now, or had a pregnancy end within the last 12 months?
 - X3: parent, guardian or caregiver of a child **13 or younger**, or of anyone with a disability?
-- X9: a serious medical condition, serious mental health condition, substance use disorder or disability? (Examples in the source include getting SSI or SSDI.)
+- X10: gets SSI or SSDI (Social Security disability benefits)? If yes → **likely exempt**. The FAQ says so directly (Q9).
+- X9: a serious health condition, serious mental health condition, substance use disorder, or physical, intellectual or developmental disability **that affects the ability to work, volunteer, go to school or be in a training program**?
 - X2: was the person in foster care as a youth, and are they 25 or younger now?
 - X5: a 100% disability rating from Veterans Affairs?
 - X6: American Indian or Alaska Native?
-- X4: meeting the work rules for SNAP (food stamps) or TANF right now? ⚠️ Mention that this exclusion appears only in the July 2026 DMAS FAQ.
+- X4: meeting the work rules for SNAP (food stamps) or TANF right now? ⚠️ Mention that this exclusion appears only in the DMAS FAQ, not on the DMAS web page.
 - X7: in a substance use disorder treatment program? ⚠️ This one also appears only in the FAQ.
 - X8: currently in jail or prison?
 
-If one applies, explain the **timing rule**: an exclusion counts if it applies on at least one day in the month of application or renewal processing. If it applied earlier in the review period but not in that month, it may still count as exception E3.
+If an exclusion applies now, the person is **likely exempt**. If it applied only earlier, check the timing window from Step 1: it may still count as exception E3.
 
-For X9, **never decide** whether a condition qualifies. Say it **may** apply and that Cover Virginia or legal aid can help confirm.
+For X9, **never decide** whether a condition qualifies. Say it **may** apply and that DMAS says more guidance is coming. Tell them to report it on the application or renewal: for 2027, no doctor's note or documents are required (FAQ Q8). Cover Virginia or legal aid can help.
 
 ### Step 4: Exceptions (`exemptions.md` C, E1–E8)
 If no exclusion applies, ask **one at a time** whether, in the month that counts (see Step 1), the person:
 - E2: was enrolled in another type of Medicaid (children's, pregnancy or SSI coverage)
 - E4: was released from jail or prison in the past 3 months
-- E7: was in a hospital, nursing facility or other institutional care, including psychiatric care. ⚠️ They **must ask** for this exception.
-- E8: had to travel for serious medical care (for themselves or a dependent) that isn't available locally. ⚠️ They **must ask** for this exception.
+- E7: was in a hospital, nursing facility or other institutional care, including psychiatric care. ⚠️ DMAS says "more information on how to request this exception will be provided at a later date." Tell them to report it on the application or renewal and ask Cover Virginia how to request it.
+- E8: had to travel for serious medical care (for themselves or a dependent) that isn't available locally. ⚠️ Same note as E7.
 - E5 and E6: lives where unemployment is high or where there is a federal disaster declaration. **You don't know which localities qualify.** Say so, and send them to Cover Virginia to ask.
 
 ### Step 5: Result

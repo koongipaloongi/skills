@@ -1,85 +1,106 @@
-# Test results: 2026-09-26
+# Test results: 2026-09-26 (re-run after the September 2026 FAQ update)
 
-**How these were run:** a headless `claude -p --plugin-dir` run failed on authentication in this environment. So each scenario was run by following the matching `SKILL.md` step by step against the `references/` files, in the Claude Code session that built the plugin. The multi-turn screener conversations are shown compressed, one question per turn. Re-run them in a live session with `claude --plugin-dir ./plugins/va-medicaid-work-requirement` (from the repo root) to confirm.
+**How these were run:** each scenario was run by following the matching `SKILL.md` step by step against the updated `references/` files, in a Claude Code session. A headless `claude -p` run couldn't sign in in this environment. The screener conversations are shown compressed. Re-run them in a live session with `claude --plugin-dir ./plugins/va-medicaid-work-requirement` (from the repo root) to confirm. The same session wrote both the expected and the actual results, so treat this as a logic check, not independent QA.
 
 Global checks G1–G5 are defined in `scenarios.md`.
 
 ## Summary
 
-| ID | Skill | Expected | Actual | Pass? |
-|---|---|---|---|---|
-| S01 | am-i-affected | Likely exempt (X1) | Likely exempt, X1, with the timing rule and FAQ link | ✅ |
-| S02 | am-i-affected | Likely exempt (X3) | Likely exempt, X3 | ✅ |
-| S03 | am-i-affected | X3 no; likely applies; mentions E3 | X3 doesn't apply (child is 14). Mentions E3 if the child was 13 during the review period. No other exemptions → Likely applies | ✅ |
-| S04 | am-i-affected | Likely does not apply (65+) | Likely does not apply. Suggests confirming coverage type or Medicare with Cover Virginia. Flags that the sources don't cover turning 65 mid-period | ✅ (after fix, see note 1) |
-| S05 | am-i-affected | Likely applies, with the 3 ways | Likely applies. Lists 80 hours / half-time school / $580, 1 month per review period. Offers hours-tracker | ✅ |
-| S06 | hours-tracker | $579 does not meet | Does not meet, $1.00 short | ✅ |
-| S07 | hours-tracker | $580 meets | Meets (income path, "at least $580") | ✅ |
-| S08 | hours-tracker | $600 meets | Meets (income path) | ✅ |
-| S09 | hours-tracker | 79 no, 80 yes, overall meets | May: does not meet, 1 hour short. June: meets. Overall meets | ✅ |
-| S10 | hours-tracker | Only July meets; overall meets | July 60 + 20 = 80 → meets. Other months don't. Overall meets (1 month is enough) | ✅ |
-| S11 | hours-tracker | Not combined; sources silent → help | "Does not meet on either path alone… sources do not say if income and hours can be combined" → Cover Virginia or legal aid | ✅ |
-| S12 | hours-tracker | 77.94 + 5 = 82.94 meets | Shows 6 × 3 × 4.33 = 77.94, + 5 = 82.94 → meets (hours path) | ✅ |
-| S13 | hours-tracker | February counts → does not meet; future job doesn't count | February doesn't meet. March hours noted, with the "may be eligible starting the month after you applied" quote. The future job doesn't count | ✅ (after fix, see note 2) |
-| S14 | notice-decoder | 5 headings, bold deadline, continued coverage, legal aid, no personal details | All present. SSN and case number not repeated. Flesch-Kincaid grade 4.1 (see below) | ✅ |
-| S15 | am-i-affected | Can't tell → help (E5) | "I don't have official information about which areas qualify" → Cover Virginia | ✅ |
-| S16 | am-i-affected | Doesn't decide on X9 → help | Says X9 "may" apply and the plugin can't decide → Cover Virginia or legal aid | ✅ |
+| ID | Skill | Expected | Actual | Pass? | Changed by Sept FAQ? |
+|---|---|---|---|---|---|
+| S01 | am-i-affected | Likely exempt (X1, applies now) | Likely exempt, X1 | ✅ | Timing note simplified |
+| S02 | am-i-affected | Likely exempt (X3) | Likely exempt, X3 | ✅ | |
+| S03 | am-i-affected | X3 no → likely applies; E3 if the child was 13 at any time since the last renewal | As expected | ✅ | E3 window is now "anytime since last renewal" |
+| S04 | am-i-affected | Likely does not apply (65+) | As expected, flags the mid-period gap | ✅ | |
+| S05 | am-i-affected | Likely applies; 3 ways to meet it | As expected; half-time now described as "usually about 6 credit hours, as the school defines it" | ✅ | Half-time wording |
+| S06 | hours-tracker | $579 → does not meet | Does not meet, $1.00 short | ✅ | |
+| S07 | hours-tracker | $580 → meets | Meets (income) | ✅ | |
+| S08 | hours-tracker | $600 → meets | Meets (income) | ✅ | |
+| S09 | hours-tracker | 79 no / 80 yes → overall meets | As expected | ✅ | |
+| S10 | hours-tracker | July 60 + 20 = 80 → meets | As expected | ✅ | |
+| S11 | hours-tracker | $300 + 40 hours not combined → get help | As expected. Notes that FAQ Q19 covers combining activities but not income | ✅ | |
+| S12 | hours-tracker | Eric example: 60 + 16 (estimate) + 12 = 88 → meets; no ×3 × 4.33 | 4 × 4 = 16, labeled "estimate based on DMAS's example"; 88 → meets. Adds "confirm with Cover Virginia," because without the school hours it would be 72 | ✅ | **Yes**: the formula was replaced |
+| S13 | hours-tracker | February doesn't meet; FAQ silent on qualifying in the application month → ask Cover Virginia | As expected; no promise of eligibility the next month | ✅ | **Yes**: the old "month after" sentence was removed |
+| S14 | notice-decoder | 5 headings, bold deadline, continued coverage, legal aid, no personal details | As expected; the appeals portal link is now the AIMS portal | ✅ | Link only |
+| S15 | am-i-affected | E5 unknown → get help | As expected | ✅ | |
+| S16 | am-i-affected | X9 may apply; more guidance coming; no doctor's note in 2027 | As expected | ✅ | **Yes** |
+| S17 | am-i-affected | SSDI → likely exempt (X10) | Likely exempt; quotes FAQ Q9 | ✅ | **New** |
+| S18 | am-i-affected | E7 may apply; how to request is to be announced; no "must request" | As expected | ✅ | **New** |
+| S19 | am-i-affected | Renewal on Jan 31, 2027 → doesn't apply yet at that renewal | As expected; cites FAQ Q4 | ✅ | **New** |
+| S20 | hours-tracker | 6 credits → "usually half-time," confirm with the school | As expected; month left unmarked until they confirm | ✅ | **New** |
+| S21 | notice-decoder | Notice of Non-Compliance: bold response deadline, ways to send, no personal details | As expected | ✅ | **New** |
+| S22 | hours-tracker | First renewal, May 2026 counts → meets | As expected; cites the "Sarah" example | ✅ | **New** |
 
-All 16 outputs passed G1 (disclaimer), G3 (free-help contacts from `get-help.md` only) and G4 (no personal details requested or repeated).
+All 22 outputs pass G1 (disclaimer), G3 (contacts only from `get-help.md`) and G4 (no personal details requested or repeated).
 
-**Notes: problems found during testing and fixed before the final run**
-1. **S04:** the screener originally had no guidance for someone who just turned 65 or is about to. I added a step telling it to say the sources don't cover this and to send the person to Cover Virginia.
-2. **S13:** `hours-tracker` originally didn't mention the FAQ rule that an applicant who meets the requirement in the month they apply "can be found eligible… starting the month after they applied." I added it.
+**Problem found while re-testing, and fixed:** for S22, `hours-tracker` step 2 only said "any one month since their last renewal." I added an explicit note that a member's first renewal under the new rule can look back over the previous 12-month coverage period, and that renewals before March 31, 2027 aren't subject to it yet.
 
 ---
 
-## Full output: S02 (am-i-affected)
+## Full output: S12 (hours-tracker)
 
-> **Claude:** Are you helping someone (a navigator, social worker or advocate), or are you the Medicaid member?
-> **User:** I'm the member.
-> **Claude:** Are you applying for Medicaid now, or already enrolled and coming up for renewal?
-> **User:** Already enrolled.
-> **Claude:** What is your age range: 18 or younger, 19–64, or 65 or older?
-> **User:** 19–64. I'm 34.
-> **Claude:** Do you know what type of Medicaid you have? For example Medicaid Expansion (adult coverage), pregnancy coverage, coverage based on a disability or SSI, or not sure?
-> **User:** Expansion.
-> **Claude:** Are you eligible for or enrolled in Medicare?
-> **User:** No.
-> **Claude:** Are you pregnant now, or did a pregnancy end in the last 12 months?
-> **User:** No.
-> **Claude:** Are you a parent, guardian or caregiver of a child age 13 or younger, or of anyone with a disability?
-> **User:** Yes, my son is 6.
+> Thresholds: **80 hours** or **$580** in a month (`rules.md` §3; source: [DMAS FAQ, Sept 2026](https://www.dmas.virginia.gov/media/cyvdt2wd/hr1-work-requirement-faqs-09-15-26.pdf))
 >
-> **Result:** Likely exempt
+> | Month | Work | Volunteer | Work program | School hrs | Half-time school? | Hours total | Income | Result |
+> |---|---|---|---|---|---|---|---|---|
+> | September | 60 | 12 | 0 | 16* | No | 88 | n/a | ✅ Meets (hours path) |
 >
-> **Why:** Virginia Medicaid lists this as an exclusion: "Being a parent, guardian, caretaker relative, or family caregiver of a dependent child age 13 or younger" (rule X3). An exclusion counts if it's true for at least one day in the month your renewal is processed. Your son is 6, so this should still be true at your next renewal.
+> \*School hours: 4 credit hours a week × 4 = **16 monthly hours**. This is an **estimate based on DMAS's example** (FAQ Q19: "four credit hours a week" counted as "16 monthly hours of educational program credit"). DMAS doesn't give an exact formula.
 >
-> **Source:** DMAS, Federal Medicaid Work Requirement FAQs (July 2026): https://www.dmas.virginia.gov/media/1zudegm1/hr1-federal-work-requirement-faqs-07-24-2026.pdf, and https://www.dmas.virginia.gov/news-updates/new-federal-requirements/federal-work-requirements/
+> **What this shows:** Your work, volunteering and school add up to 88 hours, which is more than 80. DMAS says these can be added together (FAQ Q19). Without the school hours you'd have 72, so it's worth confirming how Virginia Medicaid counts your credits. Call Cover Virginia to check.
 >
-> **Next step:** Virginia Medicaid first checks the information it already has. Make sure your son is listed on your case. If you're not sure, call Cover Virginia and ask them to confirm that you're exempt.
+> **Records to keep before renewal:**
+> *Suggested records to keep. This is not an official list. In 2027, what you report on your application or renewal is usually enough. If Virginia Medicaid needs more, they'll send a notice, and you'll have 30 days to respond.*
+> - [ ] Pay stubs, or a letter from your employer, showing September hours
+> - [ ] A signed log or letter from the nonprofit showing your volunteer dates and hours
+> - [ ] An enrollment verification from your school showing your credit hours
+>
+> **Source:** https://www.dmas.virginia.gov/media/cyvdt2wd/hr1-work-requirement-faqs-09-15-26.pdf
 >
 > **Free help:** Call Cover Virginia at 1-855-242-8282 (TTY 1-888-221-1590). You can also contact your local department of social services (find it at dss.virginia.gov/localagency). For free legal help, call 866-LEGLAID (866-534-5243).
 >
 > **This is general information, not an eligibility decision or legal advice.**
 
-## Full output: S11 (hours-tracker)
+## Full output: S17 (am-i-affected, compressed)
 
-> Thresholds: **80 hours** or **$580** in a month (`rules.md` §3; source: [DMAS FAQ, July 2026](https://www.dmas.virginia.gov/media/1zudegm1/hr1-federal-work-requirement-faqs-07-24-2026.pdf))
+> Helper or member → member. Applying or enrolled → enrolled, next renewal in June 2027. Age → 19–64 (45). Coverage type → Expansion. Medicare → no. Pregnant → no. Child 13 or younger → no. SSI or SSDI → **yes, SSDI.**
 >
-> | Month | Work | Volunteer | Work program | School hrs | Half-time school? | Hours total | Income | Result |
-> |---|---|---|---|---|---|---|---|---|
-> | August | 0 | 40 | 0 | 0 | No | 40 | $300 | ⚠️ Does not meet on either path alone |
+> **Result:** Likely exempt
 >
-> **What this shows:** In August you had 40 hours (40 short of 80) and $300 income ($280 short of $580). Each one alone is below the line. The official sources **do not say** whether income and hours can be added together, so this tool doesn't add them. Ask Cover Virginia or legal aid about this month. Any other month in your review period that meets the requirement on its own would be enough.
+> **Why:** Virginia Medicaid's FAQ says: "Yes, you are exempt if you receive Supplemental Security Income (SSI) or Social Security Disability Insurance (SSDI)." (rule X10). In 2027, what you report on your renewal form is usually enough to show this.
 >
-> **Records to keep before renewal:**
-> *Suggested records to keep. This is not an official list. If Virginia Medicaid asks for proof, the letter will say what they need.*
-> - [ ] A signed log or letter from the public or nonprofit organization showing your volunteer dates and hours
-> - [ ] Pay stubs or income records for August
+> **Source:** DMAS FAQ, updated September 2026, Q9: https://www.dmas.virginia.gov/media/cyvdt2wd/hr1-work-requirement-faqs-09-15-26.pdf
 >
-> **Source:** https://www.dmas.virginia.gov/media/1zudegm1/hr1-federal-work-requirement-faqs-07-24-2026.pdf
+> **Next step:** When your renewal form comes, fill it out fully and say that you get SSDI. If you're not sure Virginia Medicaid has this on file, call Cover Virginia.
 >
 > **Free help:** Call Cover Virginia at 1-855-242-8282 (TTY 1-888-221-1590). You can also contact your local department of social services (find it at dss.virginia.gov/localagency). For free legal help, call 866-LEGLAID (866-534-5243).
+>
+> **This is general information, not an eligibility decision or legal advice.**
+
+## Full output: S21 (notice-decoder)
+
+> **What this letter is about**
+> Virginia Medicaid needs more information. They want to know if you met the work rule, or if you are exempt from it. If they don't get it, your coverage may end.
+>
+> **What they're asking for**
+> - Proof of your work, school, volunteer or training hours, or your income, for any one month since your last renewal, **or**
+> - Information about an exemption that applies to you (for example, pregnancy, caring for a child 13 or younger, or getting SSI or SSDI).
+>
+> **Deadline**
+> - **Send it by June 2, 2027.** This is the date in your letter. DMAS gives 30 days to respond.
+>
+> **What to do next**
+> 1. Pick one month when you worked, went to school or volunteered for 80 hours, or earned $580. Or pick the exemption that fits you.
+> 2. Send the information in one of these ways:
+>    - Mail it to Cardinal Care Correspondence Center, PO Box 1198, Richmond, VA 23218.
+>    - Upload it at commonhelp.virginia.gov.
+>    - Call Cover Virginia at 1-855-242-8282 (TTY 1-888-221-1590). Some information can be given over the phone.
+> 3. If you can't meet the deadline or aren't sure what to send, call Cover Virginia or legal aid right away.
+>
+> **Where to get free help**
+> Call Cover Virginia at 1-855-242-8282 (TTY 1-888-221-1590). You can also contact your local department of social services (find it at dss.virginia.gov/localagency). For free legal help, call 866-LEGLAID (866-534-5243).
+>
+> **Source:** [DMAS FAQ, Sept 2026, Q20](https://www.dmas.virginia.gov/media/cyvdt2wd/hr1-work-requirement-faqs-09-15-26.pdf)
 >
 > **This is general information, not an eligibility decision or legal advice.**
 
@@ -97,18 +118,18 @@ All 16 outputs passed G1 (disclaimer), G3 (free-help contacts from `get-help.md`
 > - The deadline in your letter is the one that counts.
 >
 > **What to do next**
-> 1. Think back. In any one month from October 2026 to March 2027, did you work, go to school, or volunteer for 80 hours? Or earn $580? Or did something like pregnancy, caring for a child 13 or younger, or a serious health problem apply? If so, that may be a reason to appeal.
+> 1. Think back. In any one month since your last renewal, did you work, go to school, or volunteer for 80 hours? Or earn $580? Or did something like pregnancy, caring for a child 13 or younger, getting SSI or SSDI, or a serious health problem apply? If so, that may be a reason to appeal.
 > 2. Call free legal aid soon at 866-LEGLAID (866-534-5243). They can help you decide.
-> 3. To appeal, send a copy of this letter to DMAS. You can file online at https://www.dmas.virginia.gov/appeals/, email appeals@dmas.virginia.gov, call 804-371-8488 (TTY 1-800-828-1120), fax 804-452-5454, or mail it to Appeals Division, DMAS, 600 E. Broad Street, Richmond, VA 23219.
+> 3. To appeal, send a copy of this letter to DMAS. You can file online at https://dmas.virginia.gov/appeals/appeals-portal/, email appeals@dmas.virginia.gov, call 804-371-8488 (TTY 1-800-828-1120), fax 804-452-5454, or mail it to Appeals Division, DMAS, 600 E. Broad Street, Richmond, VA 23219.
 >
 > **Where to get free help**
 > Call Cover Virginia at 1-855-242-8282 (TTY 1-888-221-1590). You can also contact your local department of social services (find it at dss.virginia.gov/localagency). For free legal help, call 866-LEGLAID (866-534-5243).
 >
 > *Tip: next time, please remove your Social Security number and case number before you paste a letter. I did not repeat them here.*
 >
-> **Source:** Appeals rules: [DMAS FAQ, July 2026](https://www.dmas.virginia.gov/media/1zudegm1/hr1-federal-work-requirement-faqs-07-24-2026.pdf); [DMAS Client Appeals FAQ (2021)](https://www.dmas.virginia.gov/media/3221/client-appeals-frequently-asked-questions-2021-05-21.pdf); [Cover Virginia Appeals](https://coverva.dmas.virginia.gov/learn/appeals/)
+> **Source:** Appeals rules: [DMAS FAQ, Sept 2026, Q21](https://www.dmas.virginia.gov/media/cyvdt2wd/hr1-work-requirement-faqs-09-15-26.pdf); [DMAS Client Appeals FAQ (2021)](https://www.dmas.virginia.gov/media/3221/client-appeals-frequently-asked-questions-2021-05-21.pdf); [Cover Virginia Appeals](https://coverva.dmas.virginia.gov/learn/appeals/)
 >
 > **This is general information, not an eligibility decision or legal advice.**
 
 ### Reading level (S14)
-`python3 tests/readability.py` → `words=277 sentences=30 syllables=377 FK grade=4.1`. That's at or below the 6th-grade target. This is a rough estimate: the script counts syllables with a simple heuristic and leaves out URLs, phone numbers and headings.
+`python3 tests/readability.py` → `words=281 sentences=30 syllables=382 FK grade=4.1`. That's at or below the 6th-grade target. It's a rough estimate: syllables are counted with a simple heuristic, and URLs, phone numbers and headings are left out.

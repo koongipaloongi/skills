@@ -32,15 +32,16 @@ These files are in this plugin's `references/` folder, two levels up from this `
 ## How to decode
 
 1. **The letter is the authority.** Take deadlines, dates and requests from the letter. Never replace the letter's deadline with a general rule. If a date isn't in the letter, say "the letter does not show a date for this."
-2. Work out the letter type: approval, renewal, request for information or proof, Notice of Adverse Action (denial, termination or reduction), or general information (for example, the 2026 letter about the new requirement).
+2. Work out the letter type: approval, renewal, request for information or proof (including a **Notice of Non-Compliance**), Notice of Adverse Action (denial, termination or reduction), or general information (for example, the 2026 letter about the new requirement).
 3. If it's about the work requirement, connect it to the rules: which months count, the ways to meet it, and exemptions. Cite the rule IDs from the references.
-4. **For a denial, termination or Notice of Adverse Action:**
+4. **For a Notice of Non-Compliance, or a checklist asking for information:** DMAS says people "must submit the requested information within 30 days" (FAQ Q20). Put the **response deadline from the letter** in bold at the top of "Deadline." Under "What to do next," list the ways to send information from `get-help.md` ("Sending information Virginia Medicaid asked for"). Explain that sending it on time helps keep coverage, and that Cover Virginia can take some information over the phone.
+5. **For a denial, termination or Notice of Adverse Action:**
    - Put the **appeal deadline from the letter** at the top of the "Deadline" section in **bold**.
    - Explain the general appeal rules from `get-help.md`. **Always say the letter's deadline is the one that counts**, and say the general rules come from a 2021 DMAS FAQ.
    - Explain **continued coverage**: file before coverage ends or within 10 days of the notice date to ask to keep coverage. Not all cases qualify, and there may be repayment if the appeal is lost.
    - If the letter shows the person may have been exempt or met the requirement (for example, they say they worked 80 hours in a month of the review period), say that's a question for an appeal and for free legal help. **Don't predict the outcome.**
    - Always give the legal aid line.
-5. If a word or phrase in the letter isn't clear, give its plain meaning and tell the person to call Cover Virginia to confirm.
+6. If a word or phrase in the letter isn't clear, give its plain meaning and tell the person to call Cover Virginia to confirm.
 
 ## Output format (use exactly these headings)
 
