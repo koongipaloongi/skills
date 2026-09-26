@@ -1,7 +1,7 @@
 {
   "name": "va-medicaid-work-requirement",
   "displayName": "VA Medicaid Work Rule Guide (unofficial)",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Unofficial, plain-language help for Virginia's federal Medicaid work requirement (Medicaid Expansion adults, starting 2027): exemption screener, notice decoder, and hours/income tracker. Not affiliated with DMAS or the Commonwealth of Virginia. General information only, not eligibility decisions or legal advice.",
   "author": {
     "name": "koongipaloongi",
@@ -9,6 +9,10 @@
   },
   "homepage": "https://github.com/koongipaloongi/skills/tree/main/plugins/va-medicaid-work-requirement",
   "repository": "https://github.com/koongipaloongi/skills",
+  "documentationUrl": "https://github.com/koongipaloongi/skills/blob/main/plugins/va-medicaid-work-requirement/README.md",
+  "supportUrl": "https://github.com/koongipaloongi/skills/issues",
+  "privacyPolicyUrl": "https://github.com/koongipaloongi/skills/blob/main/plugins/va-medicaid-work-requirement/PRIVACY.md",
+  "termsOfServiceUrl": "https://github.com/koongipaloongi/skills/blob/main/plugins/va-medicaid-work-requirement/TERMS.md",
   "license": "MIT",
   "keywords": [
     "medicaid",

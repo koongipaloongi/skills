@@ -120,6 +120,10 @@ The FAQ says federal guidance may change. To update:
 
 Corrections are welcome. Please include an official source link for any rule change.
 
+## Privacy and terms
+
+The plugin collects and stores nothing, and sends nothing to the maintainer. Your conversations are handled by Anthropic under its own privacy policy. See the [Privacy Policy](PRIVACY.md) and [Terms of Use](TERMS.md).
+
 ## Maintainer
 
 [@koongipaloongi](https://github.com/koongipaloongi). Report errors or rule changes by [opening an issue](https://github.com/koongipaloongi/skills/issues).
