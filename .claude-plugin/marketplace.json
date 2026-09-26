@@ -1,0 +1,14 @@
+{
+  "name": "va-medicaid",
+  "description": "Free, open-source tools for helping Virginians keep Medicaid coverage",
+  "owner": {
+    "name": "GITHUB_OWNER"
+  },
+  "plugins": [
+    {
+      "name": "va-medicaid-work-requirement",
+      "source": "./plugins/va-medicaid-work-requirement",
+      "description": "Screener, notice decoder, and hours tracker for Virginia's federal Medicaid work requirement"
+    }
+  ]
+}
