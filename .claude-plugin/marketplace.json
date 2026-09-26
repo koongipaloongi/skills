@@ -1,8 +1,8 @@
 {
-  "name": "va-medicaid",
-  "description": "Free, open-source tools for helping Virginians keep Medicaid coverage",
+  "name": "koongipaloongi-skills",
+  "description": "Free, open-source Claude Code plugins by koongipaloongi",
   "owner": {
-    "name": "GITHUB_OWNER"
+    "name": "koongipaloongi"
   },
   "plugins": [
     {

@@ -1,6 +1,6 @@
 # Test scenarios
 
-Rules as of 2026-09-26. Rule IDs (X1–X9 for exclusions, E1–E8 for exceptions, §N for sections of rules.md) point to `plugins/va-medicaid-work-requirement/references/`.
+Rules as of 2026-09-26. Rule IDs (X1–X9 for exclusions, E1–E8 for exceptions, §N for sections of rules.md) point to `../references/`.
 
 Every output must also pass these **global checks**:
 - **G1:** includes "This is general information, not an eligibility decision or legal advice."

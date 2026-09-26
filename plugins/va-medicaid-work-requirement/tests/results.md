@@ -1,6 +1,6 @@
 # Test results: 2026-09-26
 
-**How these were run:** a headless `claude -p --plugin-dir` run failed on authentication in this environment. So each scenario was run by following the matching `SKILL.md` step by step against the `references/` files, in the Claude Code session that built the plugin. The multi-turn screener conversations are shown compressed, one question per turn. Re-run them in a live session with `claude --plugin-dir ./plugins/va-medicaid-work-requirement` to confirm.
+**How these were run:** a headless `claude -p --plugin-dir` run failed on authentication in this environment. So each scenario was run by following the matching `SKILL.md` step by step against the `references/` files, in the Claude Code session that built the plugin. The multi-turn screener conversations are shown compressed, one question per turn. Re-run them in a live session with `claude --plugin-dir ./plugins/va-medicaid-work-requirement` (from the repo root) to confirm.
 
 Global checks G1–G5 are defined in `scenarios.md`.
 
